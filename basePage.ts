@@ -46,10 +46,10 @@ export class BasePage {
     }; 
     actionWiggle(actions: Actions, originElement: WebElement, moveDurationMS: number = 100): Actions {
         return actions.move({origin: originElement, duration: moveDurationMS})
-        .move({origin: originElement, x:10, y: 0, duration: moveDurationMS})
-        .move({origin: originElement, x:0, y:10, duration: moveDurationMS})
-        .move({origin: originElement, x:10, y:0, duration: moveDurationMS})
-        .move({origin: originElement, x:0, y:10, duration: moveDurationMS})
+        .move({origin: originElement, x:5, y: 0, duration: moveDurationMS})
+        .move({origin: originElement, x:0, y:5, duration: moveDurationMS})
+        .move({origin: originElement, x:5, y:0, duration: moveDurationMS})
+        .move({origin: originElement, x:0, y:5, duration: moveDurationMS})
         .pause(moveDurationMS)
     }; 
 
