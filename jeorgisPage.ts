@@ -75,6 +75,48 @@ export class LibraryClass extends BasePage {
         await this.driver.switchTo().window(myTabs[0]);
     };
 
+    async numTabs() {
+        let myTabs = await this.driver.getAllWindowHandles();
+        await this.driver.switchTo().window(myTabs[1]);
+        await this.driver.sleep(1500); 
+        fs.writeFile(`${__dirname}/numPar.png`,
+        await this.driver.takeScreenshot(), "base64",
+        (e) =>{
+            if (e) console.log;
+            else console.log("This worked!");
+        });
+        await this.driver.close();
+        await this.driver.switchTo().window(myTabs[0]);
+    };
+
+    async symTabs() {
+        let myTabs = await this.driver.getAllWindowHandles();
+        await this.driver.switchTo().window(myTabs[1]);
+        await this.driver.sleep(1500); 
+        fs.writeFile(`${__dirname}/symPar.png`,
+        await this.driver.takeScreenshot(), "base64",
+        (e) =>{
+            if (e) console.log;
+            else console.log("This worked!");
+        });
+        await this.driver.close();
+        await this.driver.switchTo().window(myTabs[0]);
+    };
+
+    async letTabs() {
+        let myTabs = await this.driver.getAllWindowHandles();
+        await this.driver.switchTo().window(myTabs[1]);
+        await this.driver.sleep(1500); 
+        fs.writeFile(`${__dirname}/letPar.png`,
+        await this.driver.takeScreenshot(), "base64",
+        (e) =>{
+            if (e) console.log;
+            else console.log("This worked!");
+        });
+        await this.driver.close();
+        await this.driver.switchTo().window(myTabs[0]);
+    };
+
     
     async locTabs() {
         let myTabs = await this.driver.getAllWindowHandles();
@@ -111,4 +153,12 @@ export class LibraryClass extends BasePage {
         await hoverAction.perform() // Actions don't actually happen until perform is called
     };
 
+    async scroll() {
+        const frame = await this.driver.findElement(By.xpath('//a[text()="Winter Reading"]'));
+    
+        await this.driver.actions()
+            .move({ origin: frame })
+            .perform();
+    };
+    
 };
