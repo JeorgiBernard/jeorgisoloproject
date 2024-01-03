@@ -29,7 +29,7 @@ export class LibraryClass extends BasePage {
     address: By = By.xpath('//a[text()="11358 Grandville Ave, South Jordan, UT 84009"]')
     redDot: By = By.xpath('//div[text()="Daybreak"]')
     getDir: By = By.xpath('//a[text()="Get Directions"]')
-    access: By = By.css('mon-logo-image')
+    access: By = By.css('.mon-logo-image')
     font: By = By.xpath('//button[@class="column arrow-left"]')
 
     
@@ -159,6 +159,13 @@ export class LibraryClass extends BasePage {
         await this.driver.actions()
             .move({ origin: frame })
             .perform();
+
+            fs.writeFile(`${__dirname}/bigText.png`,
+        await this.driver.takeScreenshot(), "base64",
+        (e) =>{
+            if (e) console.log;
+            else console.log("This worked!");
+        });
     };
     
 };

@@ -150,12 +150,12 @@ test("testing buttons and search functions", async () => {
     await lib.driver.sleep(2000);
 
     //! Testing accessibility functions
-    await  lib.getElement(By.css('mon-logo-image'));
+    await  lib.getElement(By.css('.mon-logo-image'));
 
     await lib.click(lib.access);
-    await lib.click(lib.font);
-    await lib.driver.sleep(1000);
-    await lib.click(lib.eventsBtn)
+    
+    await lib.driver.sleep(5000);
+    await lib.click(lib.eventsBtn);
     await lib.scroll();
 
    
